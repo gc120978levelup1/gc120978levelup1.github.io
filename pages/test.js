@@ -2,6 +2,7 @@ import paramHook from "../js/gmodules/paramHooks.js"
 import sigbin from  "../js/gmodules/SigBinBoy.js";
 const Ttest = () => {
     function HTML(){ //window.innerHeight
+      sigbin.requestInput(true); // stop cycle
       /* Start of JS Add Code Here */
       /**/
       let name;
@@ -25,6 +26,7 @@ const Ttest = () => {
 
       "#test-submit".onclick( (ev) => {
           sigbin.hop('/testsubmitreceiver');
+          sigbin.requestInput(false); //resume cycle
       });
       
       /* Endin of JS Add Code Here */
