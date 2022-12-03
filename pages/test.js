@@ -8,7 +8,7 @@ const Ttest = () => {
       let email;
       let phone;
 
-      "#test-name".onchange( (ev) => {
+      "#test-name".onchange((ev) => {
           name = ev.target.value;
       });
 
