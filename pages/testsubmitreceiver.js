@@ -4,7 +4,9 @@ const Ttestsubmitreceiver = () => {
       /* Start of JS Add Code Here */
       /**/
       
-      let data = paramHook.getPageParam("testsubmitreceiver")
+      let data = paramHook.getPageParam("testsubmitreceiver");
+      console.log(data);
+      paramHook.flushParam("testsubmitreceiver");
       
       let name;
       let email;
@@ -37,8 +39,6 @@ const Ttestsubmitreceiver = () => {
             </div>
 
       `;
-      //paramHook.flushParam("testsubmitreceiver");
-      //console.log(data);
       return HTMLValue;
     }
     return {HTML}
