@@ -10,7 +10,7 @@ const Ttestsubmitreceiver = () => {
       let email;
       let phone;
 
-      if (data){
+      if (data !== null){
         name = data.name;
         email = data.email;
         phone = data.phone;
@@ -37,8 +37,8 @@ const Ttestsubmitreceiver = () => {
             </div>
 
       `;
-      paramHook.flushParam("testsubmitreceiver");
-      console.log(data);
+      //paramHook.flushParam("testsubmitreceiver");
+      //console.log(data);
       return HTMLValue;
     }
     return {HTML}
