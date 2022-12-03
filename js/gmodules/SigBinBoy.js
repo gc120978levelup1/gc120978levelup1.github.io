@@ -118,7 +118,7 @@ function SigBinBoy(){
             rootDOMID.e().onchange = (ev) => {
                 DOMValueChangedCallBack(ev)
             };
-        }, 500);
+        }, 100);
     }
 
     String.prototype.onclick = function(DOMOnClickedCallBack){
@@ -127,7 +127,7 @@ function SigBinBoy(){
             rootDOMID.e().onclick = (ev) => {
                 DOMOnClickedCallBack(ev)
             };
-        }, 500);
+        }, 100);
     }
 
     String.prototype.jsx = async function(addPath=""){
@@ -169,9 +169,9 @@ function SigBinBoy(){
                 window.history.pushState({}, routePath, window.location.origin + routePath);
                 let currentPage = routeList[window.location.pathname].HTML();
                 getCurrentPageCallBack(currentPage); //execute callback function from index.js
-                return false;
+                //return false;
             }
-        },1000);
+        },100);
     }
     
     //gets the remaining height of window minus the header
