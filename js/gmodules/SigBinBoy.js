@@ -173,13 +173,6 @@ function SigBinBoy(){
             }
         },1000);
     }
-
-    function navigate(toRoutePath){
-        window.history.pushState({}, toRoutePath, window.location.origin + toRoutePath);
-        let currentPage = routeList[toRoutePath].HTML();
-        getCurrentPageCallBack(currentPage); //execute callback function from index.js
-        return false;        
-    }
     
     //gets the remaining height of window minus the header
     function getRemainingHeight(){
