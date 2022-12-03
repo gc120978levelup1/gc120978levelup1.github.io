@@ -2,7 +2,7 @@ import paramHook from "../js/gmodules/paramHooks.js"
 import sigbin from  "../js/gmodules/SigBinBoy.js";
 const Ttest = () => {
     function HTML(){ //window.innerHeight
-      sigbin.requestInput(true); // stop cycle
+      sigbin.requestInput(true);       // stop cycle for a form page
       /* Start of JS Add Code Here */
       /**/
       let name;
@@ -11,22 +11,20 @@ const Ttest = () => {
 
       "#test-name".onchange( (ev) => {
           name = ev.target.value;
-          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
       });
 
       "#test-email".onchange( (ev) => {
           email = ev.target.value;
-          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
       });
 
       "#test-phone".onchange( (ev) => {
           phone = ev.target.value;
-          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
       });
 
       "#test-submit".onclick( (ev) => {
+          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
           sigbin.hop('/testsubmitreceiver');
-          sigbin.requestInput(false); //resume cycle
+          sigbin.requestInput(false); //resume cycle after submit
       });
       
       /* Endin of JS Add Code Here */
