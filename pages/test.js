@@ -10,18 +10,20 @@ const Ttest = () => {
 
       "#test-name".onchange( (ev) => {
           name = ev.target.value;
+          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
       });
 
       "#test-email".onchange( (ev) => {
           email = ev.target.value;
+          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
       });
 
       "#test-phone".onchange( (ev) => {
           phone = ev.target.value;
+          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
       });
 
       "#test-submit".onclick( (ev) => {
-          paramHook.setPageParam("testsubmitreceiver",{name, email, phone});
           sigbin.hop('/testsubmitreceiver');
       });
       
