@@ -13,6 +13,6 @@ export const users = [
         name      : "James M. Cacho",
         contact   : "+10999-520-2547",
         address   : "Purok Waling Waling San Nicolas Dipolog City",
-        img       : "/assets/img/users/image0002.JPG",
+        img       : "/assets/img/users/image0002.jpg",
     }
 ]

@@ -540,23 +540,22 @@ document.addEventListener("DOMContentLoaded", () => {
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard.html">
-                                        Dashboard
-                                        &nbsp;
-                                        <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        &nbsp;
-                                    </li>
-                                    <li class="nav-item">
-                                        <span class="text-primary position-relative">
-                                        <h5 class="position-absolute top-50 start-100 translate-middle ">
-                                            <span class="badge rounded-circle bg-danger">
-                                                <span id="nos-of-items-in-cart">99+</span>
+                                            Dashboard
+                                            &nbsp;
+                                            <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                                            &nbsp;
+                                            <span class="text-primary position-relative">
+                                            <div
+                                                class="position-absolute top-0 start-100 translate-middle"
+                                            >
+                                                <span class="badge rounded-circle bg-danger">
+                                                <span id="nos-of-items-in-cart"></span>
                                                 <span class="visually-hidden">unread messages</span>
+                                                </span>
+                                            </div>
                                             </span>
-                                        </h5>
-                                        </span>
+                                            &nbsp;&nbsp;
+                                        </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="logout.html">Logout</a>
