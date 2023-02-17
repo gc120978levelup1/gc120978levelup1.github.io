@@ -10,6 +10,26 @@ import {geek_tshirts      } from "../data/geek_tshirts.js"
 import {shoes             } from "../data/shoes.js"
 
 document.addEventListener("DOMContentLoaded", () => {
+    
+    function update_sold(stock){
+        let upcoming_deliveries = JSON.parse(localStorage.getItem('myStore-upcoming-deliveries'));
+        if (upcoming_deliveries){
+            for(let item of stock){
+                let x = upcoming_deliveries.filter((a) => a.id === item.id)
+                let new_sale = x.length
+                item.sold += new_sale
+            }
+        }
+    }
+
+    update_sold(mobiles)
+    update_sold(mobile_accessories)
+    update_sold(laptops)
+    update_sold(desktops)
+    update_sold(parts)
+    update_sold(bags)
+    update_sold(geek_tshirts)
+    update_sold(shoes)
 
     let all_items = [
                      ...mobiles, 
