@@ -4,8 +4,10 @@
 
 body {
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 0;
   color: #5a5a5a;
+  position: relative;
+  background-image: linear-gradient(to bottom, rgb(183, 205, 208), rgb(232, 232, 109));
 }
 
 

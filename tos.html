@@ -22,7 +22,60 @@
 
     <link href="./assets/css/carousel.css" rel="stylesheet" />
   </head>
-  <body class="bg-success">
+  <body>
+    <div
+      id="progress-progressan2"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(233, 241, 6);
+        z-index: 50001;
+      "
+    ></div>
+    <div
+      id="progress-progressan"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(5, 5, 255);
+        z-index: 50002;
+      "
+    ></div>
+    <div
+      id="loading"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 50000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+      "
+    >
+      <div style="flex-direction: row">
+        <div id="loading-start" style="height: 50px; width: 50px">
+          <img
+            width="100%"
+            src="./assets/img/loading-arrow2.png"
+            alt="loading-arrow2"
+          />
+        </div>
+      </div>
+    </div>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -35,7 +88,7 @@
               class="rounded-circle"
               id="main-icon"
             />
-            myStore
+            <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
           </a>
           <button
             class="navbar-toggler"
@@ -70,9 +123,7 @@
       </nav>
     </header>
 
-    <main class="bg-white"  style="font-size: larger; line-height: 40px">
-      <br />
-      <br />
+    <main style="font-size: larger; line-height: 40px">
       <br />
       <br />
       <section id="tos">
@@ -157,8 +208,6 @@
               </p>
               <br />
               <br />
-              <br />
-              <br />
             </div>
           </div>
         </div>
@@ -166,7 +215,7 @@
     </main>
     <footer
       class="bg-success text-white"
-      style="height: 100%; padding-top: 40px"
+      style="height: 100%; padding-top: 45px"
     >
       <div class="container">
         <div class="row">
@@ -179,7 +228,7 @@
                 srcset=""
                 class="rounded-circle"
               />
-              myStore
+              <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
             </h1>
             <p>Address: 123 Main Street, Anytown, Philippines 12345</p>
             <p>Phone: (123) 456-7890</p>
@@ -225,9 +274,12 @@
             </ul>
           </div>
         </div>
-        <div class="copyright">
+        <br />
+        <div class="copyright text-center">
           Copyright &copy; 2023 myStore. All rights reserved.
         </div>
+        <br />
+        <br />
       </div>
     </footer>
 
@@ -236,4 +288,3 @@
     <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>
-

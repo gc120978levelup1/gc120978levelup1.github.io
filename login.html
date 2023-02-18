@@ -32,6 +32,59 @@
       overflow: hidden;
     "
   >
+    <div
+      id="progress-progressan2"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(233, 241, 6);
+        z-index: 50001;
+      "
+    ></div>
+    <div
+      id="progress-progressan"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(5, 5, 255);
+        z-index: 50002;
+      "
+    ></div>
+    <div
+      id="loading"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 50000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+      "
+    >
+      <div style="flex-direction: row">
+        <div id="loading-start" style="height: 50px; width: 50px">
+          <img
+            width="100%"
+            src="./assets/img/loading-arrow2.png"
+            alt="loading-arrow2"
+          />
+        </div>
+      </div>
+    </div>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -44,7 +97,7 @@
               class="rounded-circle"
               id="main-icon"
             />
-            myStore
+            <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
           </a>
           <button
             class="navbar-toggler"
@@ -78,7 +131,6 @@
         <div class="container-fluid">
           <br />
           <br />
-
 
           <!-- Modal -->
           <div
@@ -130,7 +182,11 @@
                         id="exampleInputPassword1"
                       />
                     </div>
-                    <a href="signup.html"><span style="text-decoration: underline; color: blue;"><i>Sign Up?</i></span></a>
+                    <a href="signup.html"
+                      ><span style="text-decoration: underline; color: blue"
+                        ><i>Sign Up?</i></span
+                      ></a
+                    >
                     <button
                       type="submit"
                       class="btn btn-primary"
@@ -161,4 +217,3 @@
     </script>
   </body>
 </html>
-

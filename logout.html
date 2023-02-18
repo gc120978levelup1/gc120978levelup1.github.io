@@ -15,11 +15,67 @@
     <!-- custom css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- font awesome css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <link href="./assets/css/carousel.css" rel="stylesheet" />
   </head>
   <body>
+    <div
+      id="progress-progressan2"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(233, 241, 6);
+        z-index: 50001;
+      "
+    ></div>
+    <div
+      id="progress-progressan"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(5, 5, 255);
+        z-index: 50002;
+      "
+    ></div>
+    <div
+      id="loading"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 50000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+      "
+    >
+      <div style="flex-direction: row">
+        <div id="loading-start" style="height: 50px; width: 50px">
+          <img
+            width="100%"
+            src="./assets/img/loading-arrow2.png"
+            alt="loading-arrow2"
+          />
+        </div>
+      </div>
+    </div>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -32,7 +88,7 @@
               class="rounded-circle"
               id="main-icon"
             />
-            myStore
+            <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
           </a>
           <button
             class="navbar-toggler"
@@ -57,21 +113,20 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="dashboard.html">
-                  Dashboard
-                  &nbsp;
+                  Dashboard &nbsp;
                   <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
                 </a>
               </li>
-              <li class="nav-item">
-                &nbsp;
-              </li>
+              <li class="nav-item">&nbsp;</li>
               <li class="nav-item">
                 <span class="text-primary position-relative">
-                  <h5 class="position-absolute top-50 start-100 translate-middle ">
-                      <span class="badge rounded-circle bg-danger">
-                          <span id="nos-of-items-in-cart">99+</span>
-                          <span class="visually-hidden">unread messages</span>
-                      </span>
+                  <h5
+                    class="position-absolute top-50 start-100 translate-middle"
+                  >
+                    <span class="badge rounded-circle bg-danger">
+                      <span id="nos-of-items-in-cart">99+</span>
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
                   </h5>
                 </span>
               </li>
@@ -111,7 +166,9 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header bg-danger-subtle">
-                  <h5 class="modal-title" id="exampleModalLabel">Logout Status</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Logout Status
+                  </h5>
                   <button
                     type="button"
                     class="btn-close"
@@ -121,9 +178,7 @@
                   ></button>
                 </div>
                 <div class="modal-body">
-                    <h4 class="text-primary">
-                        Successfully logged out!
-                    </h4>
+                  <h4 class="text-primary">Successfully logged out!</h4>
                 </div>
               </div>
             </div>
@@ -145,4 +200,3 @@
     </script>
   </body>
 </html>
-

@@ -10,6 +10,13 @@ import {geek_tshirts      } from "../data/geek_tshirts.js"
 import {shoes             } from "../data/shoes.js"
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    setTimeout(() => {
+        //document.getElementById("loading").style.display = "none";
+        document.getElementById("loading").classList.add("disappear");
+        document.getElementById("progress-progressan").classList.add("disappear");
+        document.getElementById("progress-progressan2").classList.add("disappear");
+    },500+3000*Math.random())
     
     function update_sold(stock){
         let upcoming_deliveries = JSON.parse(localStorage.getItem('myStore-upcoming-deliveries'));
@@ -556,7 +563,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (login_status === '1'){ //user is logged in
             inIndexHtml.innerHTML =/*html*/`  
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard.html">
@@ -576,6 +583,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                             </span>
                                             &nbsp;&nbsp;
                                         </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="checkout.html">Checkout</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="logout.html">Logout</a>
@@ -612,6 +622,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    
+
     let nos_items_in_cart = document.getElementById('nos-of-items-in-cart')
     if (nos_items_in_cart){
         nos_items_in_cart.innerHTML = '0'
@@ -622,6 +634,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    nos_items_in_cart = document.getElementById('nos-of-items-in-cart2')
+    if (nos_items_in_cart){
+        nos_items_in_cart.innerHTML = '0'
+        let cart_list = JSON.parse(localStorage.getItem('myStore-cart'));
+        console.log(cart_list)
+        if (cart_list){
+            nos_items_in_cart.innerHTML = cart_list.length.toLocaleString();
+        }
+    }
+    
     let nos_items_incoming = document.getElementById('nos-of-items-incoming');
     if (nos_items_incoming){
         nos_items_incoming.innerHTML = '0'

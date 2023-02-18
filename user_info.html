@@ -27,11 +27,63 @@
       background: url('/assets/img/user-info.jpg') no-repeat center center fixed;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100vh;
-      width: 100vw;
+
       color: white;
     "
   >
+    <div
+      id="progress-progressan2"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(233, 241, 6);
+        z-index: 50001;
+      "
+    ></div>
+    <div
+      id="progress-progressan"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(5, 5, 255);
+        z-index: 50002;
+      "
+    ></div>
+    <div
+      id="loading"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 50000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+      "
+    >
+      <div style="flex-direction: row">
+        <div id="loading-start" style="height: 50px; width: 50px">
+          <img
+            width="100%"
+            src="./assets/img/loading-arrow2.png"
+            alt="loading-arrow2"
+          />
+        </div>
+      </div>
+    </div>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -44,7 +96,7 @@
               class="rounded-circle"
               id="main-icon"
             />
-            myStore - Checkout
+            <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
           </a>
           <button
             class="navbar-toggler"
@@ -60,7 +112,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html"
+                <a class="nav-link" aria-current="page" href="/"
                   >Home</a
                 >
               </li>
@@ -81,6 +133,9 @@
                   </span>
                   &nbsp;&nbsp;
                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="checkout.html">Checkout</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="logout.html">Logout</a>
@@ -114,31 +169,10 @@
                 <h2 class="mb-5">
                   <i><b>myProfile</b></i>
                 </h2>
-                <div class="accordion mb-12" id="accordionPanelsStayOpenExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                          <button
-                            class="accordion-button"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseOne"
-                            aria-expanded="true"
-                            aria-controls="panelsStayOpen-collapseOne"
-                          >
-                            <i class="fa fa-picture-o fa-2x text-success" aria-hidden="true"></i>
-                            &nbsp;Picture
-                          </button>
-                        </h2>
-                        <div
-                          id="panelsStayOpen-collapseOne"
-                          class="accordion-collapse collapse show"
-                          aria-labelledby="panelsStayOpen-headingOne"
-                        >
-                          <div class="accordion-body">
-                            <img height="350px" src="./assets/img/users/image0001.jpg" alt="" srcset="" id="user-image">
-                          </div>
-                        </div>
-                      </div>
+                <div
+                  class="accordion mb-12"
+                  id="accordionPanelsStayOpenExample"
+                >
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                       <button
@@ -149,7 +183,43 @@
                         aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne"
                       >
-                        <i class="fa fa-user fa-2x text-danger" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-picture-o fa-2x text-success"
+                          aria-hidden="true"
+                        ></i>
+                        &nbsp;Picture
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseOne"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="panelsStayOpen-headingOne"
+                    >
+                      <div class="accordion-body">
+                        <img
+                          height="350px"
+                          src="./assets/img/users/image0001.jpg"
+                          alt=""
+                          srcset=""
+                          id="user-image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne"
+                        aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne"
+                      >
+                        <i
+                          class="fa fa-user fa-2x text-danger"
+                          aria-hidden="true"
+                        ></i>
                         &nbsp;Name
                       </button>
                     </h2>
@@ -159,7 +229,9 @@
                       aria-labelledby="panelsStayOpen-headingOne"
                     >
                       <div class="accordion-body">
-                        <strong id="user-name">This is the first item's accordion body.</strong>
+                        <strong id="user-name"
+                          >This is the first item's accordion body.</strong
+                        >
                       </div>
                     </div>
                   </div>
@@ -183,10 +255,16 @@
                     >
                       <div class="accordion-body">
                         <span class="badge rounded-pill bg-success">Phone</span>
-                        <strong id="user-contact-info">This is the first item's accordion body.</strong>
-                        <br>
-                        <span class="badge rounded-pill bg-primary">Email&nbsp;</span>
-                        <strong id="user-email-info">This is the first item's accordion body.</strong>
+                        <strong id="user-contact-info"
+                          >This is the first item's accordion body.</strong
+                        >
+                        <br />
+                        <span class="badge rounded-pill bg-primary"
+                          >Email&nbsp;</span
+                        >
+                        <strong id="user-email-info"
+                          >This is the first item's accordion body.</strong
+                        >
                       </div>
                     </div>
                   </div>
@@ -212,8 +290,12 @@
                       aria-labelledby="panelsStayOpen-headingThree"
                     >
                       <div class="accordion-body">
-                        <span class="badge rounded-pill bg-warning text-dark">Home</span>
-                        <strong id="user-shipping-address">This is the first item's accordion body.</strong>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          >Home</span
+                        >
+                        <strong id="user-shipping-address"
+                          >This is the first item's accordion body.</strong
+                        >
                       </div>
                     </div>
                   </div>
@@ -224,9 +306,78 @@
         </div>
       </section>
     </main>
+
+    <footer
+      class="bg-success text-white"
+      style="height: 100%; padding-top: 45px"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h1>
+              <img
+                height="80px"
+                src="./assets/img/favicon.jpg"
+                alt=""
+                srcset=""
+                class="rounded-circle"
+              />
+              <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
+            </h1>
+            <p>Address: 123 Main Street, Anytown, Philippines 12345</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: <a href="mailto:info@mystore.com">info@mystore.com</a></p>
+          </div>
+          <div class="col-md-4">
+            <h4>Follow us</h4>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitch fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Links</h4>
+            <ul class="list-unstyled">
+              <li><a href="retpol.html">Return & Refund Policy</a></li>
+              <li><a href="privpol.html">Privacy Policy</a></li>
+              <li><a href="tos.html">Terms of Service</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <br />
+        <div class="copyright text-center">
+          Copyright &copy; 2023 myStore. All rights reserved.
+        </div>
+        <br />
+        <br />
+      </div>
+    </footer>
     <!-- bootstrap js -->
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>
-

@@ -15,11 +15,67 @@
     <!-- custom css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- font awesome css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <link href="./assets/css/carousel.css" rel="stylesheet" />
   </head>
   <body>
+    <div
+      id="progress-progressan2"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(233, 241, 6);
+        z-index: 50001;
+      "
+    ></div>
+    <div
+      id="progress-progressan"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5px;
+        background-color: rgb(5, 5, 255);
+        z-index: 50002;
+      "
+    ></div>
+    <div
+      id="loading"
+      class="appear"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 50000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+      "
+    >
+      <div style="flex-direction: row">
+        <div id="loading-start" style="height: 50px; width: 50px">
+          <img
+            width="100%"
+            src="./assets/img/loading-arrow2.png"
+            alt="loading-arrow2"
+          />
+        </div>
+      </div>
+    </div>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -32,7 +88,7 @@
               class="rounded-circle"
               id="main-icon"
             />
-            myStore - Dashboard
+            <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
           </a>
           <button
             class="navbar-toggler"
@@ -48,10 +104,32 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="/"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="checkout.html">Checkout</a>
+                <a class="nav-link active" href="#">
+                  Dashboard &nbsp;
+                  <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                  &nbsp;
+                  <span class="text-primary position-relative">
+                    <div
+                      class="position-absolute top-0 start-100 translate-middle"
+                    >
+                      <span class="badge rounded-circle bg-danger">
+                        <span id="nos-of-items-in-cart2"></span>
+                        <span class="visually-hidden">unread messages</span>
+                      </span>
+                    </div>
+                  </span>
+                  &nbsp;&nbsp;
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="checkout.html"
+                  >Checkout</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="logout.html">Logout</a>
@@ -75,38 +153,39 @@
     </header>
 
     <main>
-      <br>
-      <br>
+      <br />
+      <br />
       <section id="dashboard">
         <div class="container">
           <h2 class="mb-5">
             <span class="text-primary position-relative">
-                <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
-                <h5 class="position-absolute top-0 start-200 translate-middle ">
-                    <span class="badge rounded-circle bg-danger">
-                        <span id="nos-of-items-in-cart">99+</span>
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </h5>
+              <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+              <h5 class="position-absolute top-0 start-200 translate-middle">
+                <span class="badge rounded-circle bg-danger">
+                  <span id="nos-of-items-in-cart">99+</span>
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </h5>
             </span>
             <i><b>Shopping Cart Items</b></i>
           </h2>
           <div class="row row-cols-md-4" id="shopping-cart-list"></div>
-          <hr>
+          <hr />
           <h2 class="mb-5">
             <i><b>Product Categories</b></i>
           </h2>
-          <div class="row row-cols-md-5" id="categories-list"></div>
-          <hr><br>
+          <div class="row row-cols-md-4" id="categories-list"></div>
+          <hr />
+          <br />
           <h2 class="mb-5">
             <span class="text-primary position-relative">
-                <i class="fa fa-ship fa-lg text-success" aria-hidden="true"></i>
-                <h5 class="position-absolute top-0 start-200 translate-middle ">
-                    <span class="badge rounded-circle bg-danger">
-                        <span id="nos-of-items-incoming">99+</span>
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </h5>
+              <i class="fa fa-ship fa-lg text-success" aria-hidden="true"></i>
+              <h5 class="position-absolute top-0 start-200 translate-middle">
+                <span class="badge rounded-circle bg-danger">
+                  <span id="nos-of-items-incoming">99+</span>
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </h5>
             </span>
             <i><b>Incoming Shipments</b></i>
           </h2>
@@ -114,6 +193,77 @@
         </div>
       </section>
     </main>
+
+    <footer
+      class="bg-success text-white"
+      style="height: 100%; padding-top: 45px"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h1>
+              <img
+                height="80px"
+                src="./assets/img/favicon.jpg"
+                alt=""
+                srcset=""
+                class="rounded-circle"
+              />
+              <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
+            </h1>
+            <p>Address: 123 Main Street, Anytown, Philippines 12345</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: <a href="mailto:info@mystore.com">info@mystore.com</a></p>
+          </div>
+          <div class="col-md-4">
+            <h4>Follow us</h4>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitch fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Links</h4>
+            <ul class="list-unstyled">
+              <li><a href="retpol.html">Return & Refund Policy</a></li>
+              <li><a href="privpol.html">Privacy Policy</a></li>
+              <li><a href="tos.html">Terms of Service</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <br />
+        <div class="copyright text-center">
+          Copyright &copy; 2023 myStore. All rights reserved.
+        </div>
+        <br />
+        <br />
+      </div>
+    </footer>
+
     <!-- bootstrap js -->
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./assets/js/index.js"></script>

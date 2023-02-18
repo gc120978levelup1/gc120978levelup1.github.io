@@ -29,7 +29,7 @@ export const geek_tshirts = [
     {
         id          : 5553452275,
         category_id : 95723450,
-        on_sale     : true,
+        on_sale     : false,
         description : "May The (F=m*dv/dt) Be with You",
         specs       : "Funny Physics Science Unisex T-Shirt",
         unit_price  : 1022,
