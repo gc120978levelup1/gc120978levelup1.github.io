@@ -737,6 +737,4 @@ document.addEventListener("DOMContentLoaded", () => {
         
     }
 
-    html2canvas()
-
 });
