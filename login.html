@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,213 +8,31 @@
     <title>myStore</title>
     <link
       rel="shortcut icon"
-      href="./assets/img/favicon.jpg"
+      href="./assets/view/img/favicon.jpg"
       type="image/jpeg"
     />
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
-    <!-- custom css -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- font awesome css -->
+    <link
+      rel="stylesheet"
+      href="/assets/view/bootstrap/css/bootstrap.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <link href="./assets/css/carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/view/style/main-css/main.css" />
   </head>
-  <body
+  <body     
     style="
-      background: url('/assets/img/login-bg.jpg') no-repeat center center fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-    "
-  >
-    <div
-      id="progress-progressan2"
-      class="appear"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 5px;
-        background-color: rgb(233, 241, 6);
-        z-index: 50001;
-      "
-    ></div>
-    <div
-      id="progress-progressan"
-      class="appear"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 5px;
-        background-color: rgb(5, 5, 255);
-        z-index: 50002;
-      "
-    ></div>
-    <div
-      id="loading"
-      class="appear"
-      style="
-        position: fixed;
-        top: 69px;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.5);
-        z-index: 50000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        backdrop-filter: blur(4px);
-      "
-    >
-      <div style="flex-direction: row">
-        <div id="loading-start" style="height: 50px; width: 50px">
-          <img
-            width="100%"
-            src="./assets/img/loading-arrow2.png"
-            alt="loading-arrow2"
-          />
-        </div>
-      </div>
-    </div>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img
-              height="40px"
-              src="./assets/img/favicon.jpg"
-              alt=""
-              srcset=""
-              class="rounded-circle"
-              id="main-icon"
-            />
-            <span style="font-weight: bolder; font-size: larger; color:aqua"> <b> myStore </b></span>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="login.html">Login</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main style="height: 100vh">
-      <section id="categories">
-        <div class="container-fluid">
-          <br />
-          <br />
-
-          <!-- Modal -->
-          <div
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            class="modal fade"
-            id="loginModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="false"
-          >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header bg-warning-subtle">
-                  <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                    onclick="window.location = '/';"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        name="email1"
-                        aria-describedby="emailHelp"
-                      />
-                      <div id="emailHelp" class="form-text">
-                        We'll never share your email with anyone else.
-                      </div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"
-                        >Password</label
-                      >
-                      <input
-                        type="password"
-                        name="password1"
-                        class="form-control"
-                        id="exampleInputPassword1"
-                      />
-                    </div>
-                    <a href="signup.html"
-                      ><span style="text-decoration: underline; color: blue"
-                        ><i>Sign Up?</i></span
-                      ></a
-                    >
-                    <button
-                      type="submit"
-                      class="btn btn-primary"
-                      style="float: right"
-                    >
-                      <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
-                      Sign in
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- bootstrap js -->
-    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./assets/js/index.js"></script>
-    <script>
-      var loginModal = new bootstrap.Modal(
-        document.getElementById("loginModal"),
-        {
-          keyboard: false,
-        }
-      );
-      loginModal.show();
-    </script>
+            background: url('/assets/view/img/login-bg.jpg') no-repeat center center fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+    ">
+    <div id="root"></div>
+    <script src="/assets/view/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/assets/controller/js/login.js"></script>
   </body>
 </html>
